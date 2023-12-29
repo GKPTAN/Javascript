@@ -21,7 +21,7 @@ section {
     display: block;
     background-color: white;
     width: 700px;
-    height: 400px;
+    height: 450px;
     margin: auto;
     padding: 15px;
 }
@@ -33,10 +33,6 @@ input#nasc {
 input#botao {
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-div {
-    text-align: center;
 }
 
 footer {

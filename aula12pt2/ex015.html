@@ -11,19 +11,31 @@
         <h1>Verificador de Idade</h1>
     </header>
     <section id="form">
-        Ano de Nascimento:
-        <input type="number" name="nasc" id="nasc" placeholder="Digite o ano aqui"> <br>
-        Sexo:
-        <input type="radio" name="sexo" id="masc"> Masculino
-        <input type="radio" name="sexo" id="fem"> Feminino <br>
-        <input id="botao" type="button" value="Verificar">
+        <div>
+            <p>
+                Ano de Nascimento:
+                <input type="number" name="nasc" id="nasc" placeholder="Digite o ano aqui">
+            </p>
+            <p>
+                Sexo:
+                <input type="radio" name="sexo" id="masc" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="sexo" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input id="botao" type="button" value="Verificar" onclick="clicar()">
+            </p>
+        </div>
     <div>
-        <p id="msg">mensagem</p>
+        <p id="res"></p>
     </div>
     <div>
         <img id="imagem" src="" alt="">
     </div>
     </section>
     <footer>© CursoemVídeo</footer>
+
+    <script src="interação/index.js"></script>
 </body>
 </html>
