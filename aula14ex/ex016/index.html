@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contador</title>
+</head>
+
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <section id="form">
+        <div>
+
+            <p>
+                Inicio:
+                <input type="number" name="n1" id="n1" placeholder="Digite o número">
+            </p>
+            <p>
+                Fim:
+                <input type="number" name="n2" id="n2" placeholder="Digite o número">
+            </p>
+            <p>
+                Passo:
+                <input type="number" name="raz" id="step" placeholder="Digite o número">
+            </p>
+            <p>
+                <input id="botao" type="button" value="Verificar" onclick="contar()">
+                <button onclick="limpar()">Limpar</button>
+            </p>
+        </div>
+        <div>
+            <p id="res"></p>
+        </div>
+    </section>
+    <footer>© CursoemVídeo</footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
