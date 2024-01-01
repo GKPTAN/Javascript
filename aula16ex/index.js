@@ -58,3 +58,15 @@ function finalizar() {
         res.innerHTML += `<p>A média dos valores digitados é ${media}</p>`
     }
 }
+
+num.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        adicionar()
+    }
+})
+
+function limpar() {
+    document.getElementById('num').value = ''
+    lista.innerHTML = ''
+    res.innerHTML = ''
+}
