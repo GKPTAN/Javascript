@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 noscript > p {
     margin-top: 51px;
     margin-left: 334px;
@@ -16,4 +20,20 @@ article {
     margin-top: 24px;
     margin-left: 1465px;
     margin-bottom: 86px;
+}
+
+article > h1 {
+    margin-bottom: 13px;
+    font-size: 2em;
+}
+
+table > caption {
+    border: 1px solid black;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+table > th {
+    border: 1px solid black;
+    padding: 5px;
 }
