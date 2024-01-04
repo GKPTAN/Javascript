@@ -27,6 +27,12 @@ article > h1 {
     font-size: 2em;
 }
 
+table {
+    margin-left: 563px;
+    border-collapse: collapse;
+    user-select: none;
+}
+
 table > caption {
     border: 1px solid black;
     font-size: 1.5em;
@@ -41,4 +47,8 @@ th {
 td {
     border: 1px solid black;
     padding: 5px;
+}
+
+td > a {
+    text-decoration: none;
 }
