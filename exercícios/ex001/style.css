@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+noscript > p {
+    margin-top: 51px;
+    margin-left: 334px;
+    margin-bottom: 385px;
+}
+
+article {
+    margin-top: 24px;
+    margin-left: 1465px;
+    margin-bottom: 86px;
+}
