@@ -13,14 +13,16 @@
     <section>
         <div id="container">
             <p id="information">
-                <label for="name">Digite seu nome:</label>
-                <input type="text" name="nameu" id="name">
-                <input type="button" value="Enviar">
+                <label for="name">Qual é o seu nome completo?</label>
+                <input type="text" name="nameu" id="name" minlength="9" maxlength="50" placeholder="Digite o seu nome" size="50">
+                <input type="button" value="Enviar" onclick="mensagem()">
             </p>
         </div>
         <div id="msg">
             <p id="res"></p>
         </div>
     </section>
+
+    <script src="index.js"></script>
 </body>
 </html>
