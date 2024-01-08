@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+section {
+    margin-left: 49px;
+}
