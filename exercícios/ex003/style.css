@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(imagens/fumante2.jpg);
+}
+
+header {
+    background-color: rgba(128, 128, 128, 0.356);
+    color: white;
+    width: 550px;
+    padding: 48px;
+    position: relative;
+    left: 82px;
+    border-radius: 2px;
+}
+
+header > h1 {
+    font-size: 3em;
+    margin-bottom: 38px;
+}
+
+header > p {
+    font-size: 1.5em;
+}
+
+section {
+    margin-top: 31px;
+    background-color: rgba(255, 255, 255);
+    width: 550px;
+    padding: 53px;
+    position: relative;
+    left: 82px;
+    border-radius: 55px;
+}
+
+section > p {
+    margin-bottom: 26px;
+    font-size: 1em;
+}
