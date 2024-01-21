@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Lustria', serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 95px 0px;
+    background-color: white;
+    color: white;
+    background-image: url(imagens/triangulo.jpg);
+    background-position: left center;
+    background-size: cover;
+}
+
+div {
+    background-color: white;
+    color: black;
+    padding: 78px;
+    width: 46%;
+    margin: auto;
+    margin-bottom: 59px;
+    border-radius: 83px;
+    box-shadow: 0 0 20px #DE509D;
+}
+
+section {
+    background-color: white;
+    color: black;
+    padding: 47px;
+    width: 42%;
+    margin: auto;
+    border-radius: 17px;
+    box-shadow: 0 0 40px #7E9462;
+}
+
+section > p {
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    font-family: 'Lustria', serif;
+}
+
+input[type="number"]:hover {
+    background-color: #e0bfd1;
+    font-weight: bold;
+    border: 2px solid #EB9C9C;
+}
+
+input[type="number"]:focus-within {
+    background-color: white;
+}

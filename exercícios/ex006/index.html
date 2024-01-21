@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Geometria</title>
+</head>
+<body>
+    <h1>FORMAÇÃO DE UM TRIÂNGULO</h1>
+    <div>
+        <p>Matematicamente, para três segmentos de reta formarem um triângulo, o comprimento de cada lado deve ser menor que a soma dos outros dois.</p>
+    </div>
+
+    <section id="form">
+        <p>Para analisar se uma figura geométrica é um triângulo ou não, digite a medida das retas abaixo:</p>
+        <p>
+            <label for="reta1">Qual o tamanho da primeira reta:</label>
+            <input type="number" name="medida" id="reta1" placeholder="Digite aqui" required>
+        </p>
+        <p>
+            <label for="reta2">Qual o tamanho da segunda reta:</label>
+            <input type="number" name="medida" id="reta2" placeholder="Digite aqui" required>
+        </p>
+        <p>
+            <label for="reta3">Qual o tamanho da terceira reta</label>
+            <input type="number" name="medida" id="reta3" placeholder="Digite aqui" required>
+        </p>
+        <p>
+            <input type="button" value="Ver Resultado" onclick="analisar();requirido()">
+            <input type="button" value="Limpar" onclick="limpar()">
+        </p>
+
+        <p id="res"></p>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
