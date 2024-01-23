@@ -63,3 +63,8 @@ input[type="number"]:hover {
 input[type="number"]:focus-within {
     background-color: white;
 }
+
+p#res {
+    border-radius: 10px;
+    padding: 5px;
+}

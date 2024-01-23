@@ -16,18 +16,18 @@
         <p>Para analisar se uma figura geométrica é um triângulo ou não, digite a medida das retas abaixo:</p>
         <p>
             <label for="reta1">Qual o tamanho da primeira reta:</label>
-            <input type="number" name="medida" id="reta1" placeholder="Digite aqui" required>
+            <input type="number" name="medida" id="reta1" placeholder="Digite aqui" required onkeydown="handleKeyDown(event, 'reta2')">
         </p>
         <p>
             <label for="reta2">Qual o tamanho da segunda reta:</label>
-            <input type="number" name="medida" id="reta2" placeholder="Digite aqui" required>
+            <input type="number" name="medida" id="reta2" placeholder="Digite aqui" required onkeydown="handleKeyDown(event, 'reta3')">
         </p>
         <p>
             <label for="reta3">Qual o tamanho da terceira reta</label>
-            <input type="number" name="medida" id="reta3" placeholder="Digite aqui" required>
+            <input type="number" name="medida" id="reta3" placeholder="Digite aqui" required onkeydown="handleKeyDown(event, 'botao')">
         </p>
         <p>
-            <input type="button" value="Ver Resultado" onclick="analisar();requirido()">
+            <input id="botao" type="button" value="Ver Resultado" onclick="analisar();requirido()">
             <input type="button" value="Limpar" onclick="limpar()">
         </p>
 
