@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Notas</title>
+</head>
+<body>
+    <h1>Boletim Escolar</h1>
+    <section>
+        <p>
+            Nome do aluno:
+            <input type="text" name="nome" id="nome" placeholder="Digite aqui" size="30" required>
+        </p>
+        <p>
+            Nota do Primeiro Semestre:
+            <input type="number" name="nota" id="nota1" placeholder="Digite aqui" required>
+        </p>
+        <p>
+            Nota do Segundo Semestre:
+            <input type="number" name="nota" id="nota2" placeholder="Digite aqui" required>
+        </p>
+        <p>
+            <input type="button" value="Ver Resultado" onclick="calcular();requirido()">
+            <input type="button" value="Limpar" onclick="limpar()">
+        </p>
+        <p class="resultado"></p>
+    </section>
+</body>
+</html>
