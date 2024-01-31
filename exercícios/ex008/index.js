@@ -20,6 +20,12 @@ function calcular() {
     }
 }
 
+function requirido() {
+    nome.reportValidity()
+    nota1.reportValidity()
+    nota2.reportValidity()
+}
+
 function nextSpace(event, nextInputId) {
     if (event.key === 'Enter') {
         event.preventDefault()
@@ -27,21 +33,9 @@ function nextSpace(event, nextInputId) {
     }
 }
 
-function requirido() {
-    nome.reportValidity()
-    nota1.reportValidity()
-    nota2.reportValidity()
-}
-
 function limpar() {
-    console.log('Função limpar chamada')
     document.querySelector("#nome").value = ''
     document.querySelector("#nota1").value = ''
     document.querySelector("#nota2").value = ''
-    if (res) {
-        console.log('Elemento res encontrado')
-        res.innerHTML = ''
-    } else {
-        console.error('Elemento res não encontrado')
-    }
+    res.innerHTML = ``
 }
