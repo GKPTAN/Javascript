@@ -20,12 +20,6 @@ function calcular() {
     }
 }
 
-function requirido() {
-    nome.reportValidity()
-    nota1.reportValidity()
-    nota2.reportValidity()
-}
-
 function nextSpace(event, nextInputId) {
     if (event.key === 'Enter') {
         event.preventDefault()
@@ -33,9 +27,15 @@ function nextSpace(event, nextInputId) {
     }
 }
 
+function requirido() {
+    nome.reportValidity()
+    nota1.reportValidity()
+    nota2.reportValidity()
+}
+
 function limpar() {
     document.querySelector("#nome").value = ''
     document.querySelector("#nota1").value = ''
     document.querySelector("#nota2").value = ''
-    res.innerHTML = ``
+    document.getElementById('resultado').innerHTML = ''
 }
