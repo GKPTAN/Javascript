@@ -36,4 +36,12 @@ body {
     width: 52%;
     margin: auto;
     border-radius: 38px;
+    border: 1px solid #FDFFE4;
+}
+
+input:hover {
+    padding: 5px;
+    background-color: #088ECD;
+    color: white;
+    transition: all .3s ease-in;
 }
