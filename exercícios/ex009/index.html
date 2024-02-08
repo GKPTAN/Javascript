@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sorteio de números</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Sorteador de números</h1>
+        <p>Tente adivinhar o número sorteado.</p>
+    </header>
+    <section class="caixa">
+        <p>
+            Escolha de 1 a 5:
+            <input type="number" name="numero" id="numero" min="1" max="5" required>
+        </p>
+        <p>
+            <input type="button" value="Ver número sorteado" onclick="verificar()">
+            <input type="button" value="Limpar" onclick="limpar()">
+        </p>
+        <p id="res"></p>
+    </section>
+</body>
+</html>
