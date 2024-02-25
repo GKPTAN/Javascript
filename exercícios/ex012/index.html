@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sorteio de números</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Sorteador de números</h1>
+        <p>Tente adivinhar o número sorteado.</p>
+        <p>Você só tem 4 chances !</p>
+    </header>
+    <section id="game">
+        <p class="numero">
+            <label for="numero">Escolha de 1 a 5:</label>
+            <input type="number" name="numero" id="numero" min="1" max="5" required onkeydown="nextSpace(event, 'botao')">
+        </p>
+        <p class="numero">
+            <input id="botao" type="button" value="Ver número sorteado" onclick="verificar();requirido()">
+            <input type="button" value="Limpar" onclick="limpar()">
+        </p>
+        <p id="res"></p>
+    </section>
+
+    <section id="oculto">
+        <p>ACABOU SUAS CHANCES!, TENTE NOVAMENTE MAIS TARDE</p>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
