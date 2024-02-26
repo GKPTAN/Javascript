@@ -21,7 +21,7 @@ function verificar() {
                 res.innerHTML = '';
             }, 1000)
             numero.value = ''
-            break
+            break;
         }
     }
 
