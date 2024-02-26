@@ -41,7 +41,7 @@ section {
 }
 
 #oculto {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: black;
     color: red;
@@ -71,5 +71,5 @@ input:hover {
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
 }
