@@ -3,6 +3,9 @@ async function verificar() {
     // Variáveis
     const res = document.getElementById('res')
     const numeroSorteado = sorteio(1, 10)
+    await new Promise(resolve => {
+        document.getElementById('botao').addEventListener('click', resolve)
+    })
 
     function sorteio(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
@@ -52,4 +55,28 @@ function hideGameSection() {
     gameSection.classList.add('hidden')
     const cabeca = document.getElementById('cabeca')
     cabeca.classList.add('hidden')
+}
+
+function nextSpace(event, nextInputId) {
+    if (event.key === 'Enter') {
+        event.preventDefault()
+        document.getElementById(nextInputId).focus()
+    }
+}
+
+function requirido() {
+    let resposta = document.getElementById('res')
+    let num = document.getElementById('numero')
+    let n = Number(numero.value)
+    if (!num.value.trim() || isNaN(n) || n < 1 || n > 10) {
+        num.setCustomValidity('Por favor, escolha um número de 1 a 10')
+        resposta.innerHTML = ''
+    } else {
+        num.setCustomValidity('')
+    }
+    num.reportValidity()
+}
+
+function reiniciar() {
+    verificar().value = ''
 }
