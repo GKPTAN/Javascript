@@ -1,40 +1,36 @@
-let tentativa = 1
 // Função para verificar
 async function verificar() {
-    // Variáveis
     const res = document.getElementById('res')
     const numeroSorteado = sorteio(1, 10)
+    const numero = document.getElementById('numero')
+    let tentativa = 1
+    let mensagens = ''
 
-    function sorteio(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min
-    }
+    for (tentativa; tentativa <= 4; tentativa++) {
+        const numeroEscolhido = Number(numero.value)
 
-    async function loop() {
-
-        let mensagens = ''
-        while (tentativa <= 4) {
-            const numero = document.getElementById('numero')
-            const numeroEscolhido = Number(numero.value)
-            if (tentativa === 4) {
-                showHiddenSection()
-                hideGameSection()
-            }
-
-            if (numeroEscolhido === numeroSorteado) {
-                res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
-            } else {
-                mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroEscolhido} <br>`
-                res.innerHTML = mensagens
-            }
-
-            tentativa++
-
-            await new Promise(resolve => {
-                document.getElementById('botao').addEventListener('click', resolve)
-            })
+        if (numeroEscolhido === numeroSorteado) {
+            res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
+            break;
+        } else {
+            mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroEscolhido} <br>`
+            res.innerHTML = mensagens
+            await aguardarInput()
+            numero.value = ''
         }
     }
-    loop()
+
+    if (tentativa === 4) {
+        showHiddenSection()
+        hideGameSection()
+    }
+}
+
+// Função para esperar a entrada do usuário
+function aguardarInput() {
+    return new Promise(resolve => {
+        document.getElementById('botao').addEventListener('click', resolve);
+    })
 }
 
 // Função para exibir a seção oculta
@@ -49,8 +45,6 @@ function showHiddenSection() {
 function hideGameSection() {
     const gameSection = document.getElementById('game')
     gameSection.classList.add('hidden')
-    const cabeca = document.getElementById('cabeca')
-    cabeca.classList.add('hidden')
 }
 
 function nextSpace(event, nextInputId) {
