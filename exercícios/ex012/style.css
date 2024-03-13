@@ -28,16 +28,18 @@ body {
 }
 
 section {
-    display: flex;
-    flex-direction: column;
+    display: block;
     background-color: white;
-    gap: 10px;
-    align-items: center;
-    padding: 48px 0px;
-    width: 52%;
     margin: auto;
+    padding: 48px 0px;
+    width: 62%;
+    text-align: center;
     border-radius: 38px;
     border: 1px solid #FDFFE4;
+}
+
+section .numero {
+    margin-bottom: 20px;
 }
 
 #oculto {

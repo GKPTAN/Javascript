@@ -1,9 +1,10 @@
-let tentativa = 1
 // Função para verificar
 async function verificar() {
     // Variáveis
+    const numero = document.getElementById('numero')
     const res = document.getElementById('res')
     const numeroSorteado = sorteio(1, 10)
+    var tentativa = 1
 
     function sorteio(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
@@ -13,17 +14,26 @@ async function verificar() {
 
         let mensagens = ''
         while (tentativa <= 4) {
-            const numero = document.getElementById('numero')
             const numeroEscolhido = Number(numero.value)
             if (tentativa === 4) {
                 showHiddenSection()
                 hideGameSection()
+                tentativa = 1
+                numero.value = ''
+                mensagens = ''
+                res.innerHTML = ''
             }
 
             if (numeroEscolhido === numeroSorteado) {
                 res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
+                setTimeout(() => {
+                tentativa = ''
+                numero.value = ''
+                mensagens = ''
+                res.innerHTML = ''
+                }, 2000)
             } else {
-                mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroEscolhido} <br>`
+                mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroSorteado} <br>`
                 res.innerHTML = mensagens
             }
 
@@ -71,10 +81,4 @@ function requirido() {
         num.setCustomValidity('')
     }
     num.reportValidity()
-}
-
-function reiniciar() {
-    tentativa = 1
-    document.getElementById('res').innerHTML = ''
-    document.getElementById('numero').value = ''
 }

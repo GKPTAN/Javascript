@@ -16,10 +16,7 @@
         <p class="numero">
             <label for="numero">Escolha de 1 a 10:</label>
             <input type="number" name="numero" id="numero" min="1" max="10" required onkeydown="nextSpace(event, 'botao')">
-        </p>
-        <p class="numero">
             <input id="botao" type="button" value="Ver número sorteado" onclick="verificar();requirido()">
-            <input type="button" value="Reiniciar" onclick="reiniciar()">
         </p>
         <p id="res"></p>
     </section>
