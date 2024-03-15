@@ -15,30 +15,28 @@ async function verificar() {
         let mensagens = ''
         while (tentativa <= 4) {
             const numeroEscolhido = Number(numero.value)
-            if (tentativa === 4) {
-                showHiddenSection()
-                hideGameSection()
-                tentativa = 1
-                numero.value = ''
-                mensagens = ''
-                res.innerHTML = ''
-            }
 
             if (numeroEscolhido === numeroSorteado) {
                 res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
                 setTimeout(() => {
-                tentativa = ''
                 numero.value = ''
-                mensagens = ''
-                res.innerHTML = ''
+                mensagens = ``
+                res.innerHTML = mensagens
                 }, 2000)
             } else {
                 mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroSorteado} <br>`
                 res.innerHTML = mensagens
             }
 
-            tentativa++
+            if (tentativa === 4) {
+                setTimeout(() => {
+                numero.value = ''
+                mensagens = ``
+                res.innerHTML = ''
+                }, 2000)
+            }
 
+            tentativa++
             await new Promise(resolve => {
                 document.getElementById('botao').addEventListener('click', resolve)
             })
