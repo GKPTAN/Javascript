@@ -29,11 +29,12 @@ async function verificar() {
             }
 
             if (tentativa === 4) {
-                setTimeout(() => {
+                showHiddenSection()
+                hideGameSection()
+                blockUser()
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = ''
-                }, 2000)
             }
 
             tentativa++
@@ -79,4 +80,19 @@ function requirido() {
         num.setCustomValidity('')
     }
     num.reportValidity()
+}
+
+function isBlocked() {
+    const endBlock = localStorage.getItem('endblock')
+    if (!endBlock) {
+        return false
+    }
+    const agora = new Date().getTime()
+    return agora < parseInt(endBlock)
+}
+
+function blockUser() {
+    const agora = new Date().getTime()
+    const endBlock = agora + 30 * 60 * 1000
+    localStorage.setItem('endblock', endBlock.toString())
 }
