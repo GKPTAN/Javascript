@@ -31,6 +31,7 @@ async function verificar() {
             if (tentativa === 4) {
                 showHiddenSection()
                 hideGameSection()
+                blockUser()
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = ''
