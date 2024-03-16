@@ -52,6 +52,7 @@ function showHiddenSection() {
     oculto.classList.remove('hidden')
     const corpo = document.getElementById('corpo')
     corpo.style.backgroundColor = 'black'
+    localStorage.setItem('secaoOcultaVisivel', 'true')
 }
 
 // Função para ocultar a seção do jogo
@@ -60,6 +61,7 @@ function hideGameSection() {
     gameSection.classList.add('hidden')
     const cabeca = document.getElementById('cabeca')
     cabeca.classList.add('hidden')
+    localStorage.setItem('secaoJogoOculta', 'true')
 }
 
 function nextSpace(event, nextInputId) {
@@ -97,3 +99,20 @@ function blockUser() {
     const agora = new Date().getTime()
     localStorage.setItem('bloqueado', JSON.stringify(agora))
 }
+
+function verificarExibicaoSecaoOculta() {
+    const secaoOcultaVisivel = localStorage.getItem('secaoOcultaVisivel')
+    if (secaoOcultaVisivel === 'true') {
+        showHiddenSection()
+    }
+}
+
+function verificarOcultacaoSecaoJogo() {
+    const secaoJogoOculta = localStorage.getItem('secaoJogoOculta')
+    if (secaoJogoOculta === 'true') {
+        hideGameSection()
+    }
+}
+
+verificarExibicaoSecaoOculta()
+verificarOcultacaoSecaoJogo()
