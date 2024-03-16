@@ -31,7 +31,6 @@ async function verificar() {
             if (tentativa === 4) {
                 showHiddenSection()
                 hideGameSection()
-                blockUser()
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = ''
@@ -82,17 +81,18 @@ function requirido() {
     num.reportValidity()
 }
 
-function isBlocked() {
-    const endBlock = localStorage.getItem('endblock')
-    if (!endBlock) {
-        return false
-    }
-    const agora = new Date().getTime()
-    return agora < parseInt(endBlock)
-}
-
 function blockUser() {
+    const beforeBlock = localStorage.getItem('bloqueado')
+    if (beforeBlock) {
+        const timeBlock = JSON.parse(beforeBlock)
+        const agora = new Date().getTime()
+        const difTime = agora - timeBlock
+        const tempoRestante = 30 * 60 * 1000 - difTime
+        if (tempoRestante > 0) {
+            return
+        }
+    }
+
     const agora = new Date().getTime()
-    const endBlock = agora + 30 * 60 * 1000
-    localStorage.setItem('endblock', endBlock.toString())
+    localStorage.setItem('bloqueado', JSON.stringify(agora))
 }
