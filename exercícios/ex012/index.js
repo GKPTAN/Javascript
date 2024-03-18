@@ -45,13 +45,6 @@ async function verificar() {
         }
     }
     loop()
-
-    const expirationTime = localStorage.getItem('expirationTime')
-    
-    if (expirationTime && new Date().getTime() > expirationTime) {
-        hideGameSection()
-        showHiddenSection()
-    }
 }
 
 // Função para exibir a seção oculta
