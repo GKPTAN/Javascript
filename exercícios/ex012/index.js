@@ -34,6 +34,8 @@ async function verificar() {
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = ''
+                const expirationTime = new Date().getTime() + (30 * 60 * 1000);
+                localStorage.setItem('expirationTime', expirationTime)
             }
 
             tentativa++
@@ -59,13 +61,6 @@ function hideGameSection() {
     gameSection.classList.add('hidden')
     const cabeca = document.getElementById('cabeca')
     cabeca.classList.add('hidden')
-}
-
-function showGameSection() {
-    const gameSection = document.getElementById('game')
-    gameSection.classList.remove('hidden')
-    const cabeca = document.getElementById('cabeca')
-    cabeca.classList.remove('hidden')
 }
 
 function nextSpace(event, nextInputId) {
