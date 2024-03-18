@@ -31,7 +31,6 @@ async function verificar() {
             if (tentativa === 4) {
                 showHiddenSection()
                 hideGameSection()
-                blockUser()
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = ''
@@ -52,7 +51,6 @@ function showHiddenSection() {
     oculto.classList.remove('hidden')
     const corpo = document.getElementById('corpo')
     corpo.style.backgroundColor = 'black'
-    localStorage.setItem('secaoOcultaVisivel', 'true')
 }
 
 // Função para ocultar a seção do jogo
@@ -61,7 +59,13 @@ function hideGameSection() {
     gameSection.classList.add('hidden')
     const cabeca = document.getElementById('cabeca')
     cabeca.classList.add('hidden')
-    localStorage.setItem('secaoJogoOculta', 'true')
+}
+
+function showGameSection() {
+    const gameSection = document.getElementById('game')
+    gameSection.classList.remove('hidden')
+    const cabeca = document.getElementById('cabeca')
+    cabeca.classList.remove('hidden')
 }
 
 function nextSpace(event, nextInputId) {
@@ -84,35 +88,47 @@ function requirido() {
     num.reportValidity()
 }
 
-function blockUser() {
-    const beforeBlock = localStorage.getItem('bloqueado')
-    if (beforeBlock) {
-        const timeBlock = JSON.parse(beforeBlock)
+// Função para verificar se as tentativas acabaram
+function verificarFimTentativas() {
+    // Verifica se as tentativas do jogador acabaram
+    const tentativasAcabaram = true // Coloque aqui a sua lógica para verificar se as tentativas acabaram
+
+    if (tentativasAcabaram) {
+        // Armazena a data e hora atual no localStorage
         const agora = new Date().getTime()
-        const difTime = agora - timeBlock
-        const tempoRestante = 30 * 60 * 1000 - difTime
-        if (tempoRestante > 0) {
-            return
-        }
-    }
+        localStorage.setItem('tempoFimTentativas', agora)
 
-    const agora = new Date().getTime()
-    localStorage.setItem('bloqueado', JSON.stringify(agora))
-}
-
-function verificarExibicaoSecaoOculta() {
-    const secaoOcultaVisivel = localStorage.getItem('secaoOcultaVisivel')
-    if (secaoOcultaVisivel === 'true') {
-        showHiddenSection()
-    }
-}
-
-function verificarOcultacaoSecaoJogo() {
-    const secaoJogoOculta = localStorage.getItem('secaoJogoOculta')
-    if (secaoJogoOculta === 'true') {
+        // Esconde a seção do jogo
         hideGameSection()
     }
 }
 
-verificarExibicaoSecaoOculta()
-verificarOcultacaoSecaoJogo()
+// Função para verificar se o tempo de espera acabou
+function verificarTempoEspera() {
+    // Verifica se o tempo de espera já passou
+    const tempoFimTentativas = localStorage.getItem('tempoFimTentativas')
+    if (tempoFimTentativas) {
+        const agora = new Date().getTime()
+        const tempoDecorrido = agora - parseInt(tempoFimTentativas)
+        const tempoEspera = 30 * 60 * 1000 // 30 minutos em milissegundos
+
+        if (tempoDecorrido < tempoEspera) {
+            // O tempo de espera ainda não acabou, então mantenha a seção do jogo oculta
+            hideGameSection()
+
+            // Configura um temporizador para verificar novamente após o tempo restante
+            const tempoRestante = tempoEspera - tempoDecorrido
+            setTimeout(verificarTempoEspera, tempoRestante)
+        } else {
+            // O tempo de espera acabou, mostra a seção do jogo
+            showGameSection()
+
+            // Remove o tempo de fim das tentativas do localStorage
+            localStorage.removeItem('tempoFimTentativas')
+        }
+    }
+}
+
+// Chame as funções para verificar o fim das tentativas e o tempo de espera ao carregar a página
+verificarFimTentativas()
+verificarTempoEspera()
