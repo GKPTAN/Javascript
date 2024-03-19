@@ -29,12 +29,7 @@ async function verificar() {
             }
 
             if (tentativa === 4) {
-                showHiddenSection()
-                hideGameSection()
-                numero.value = ''
-                mensagens = ``
-                res.innerHTML = ''
-                const expirationTime = new Date().getTime() + (30 * 60 * 1000);
+                const expirationTime = new Date().getTime() + (30 * 60 * 1000)
                 localStorage.setItem('expirationTime', expirationTime)
             }
 
@@ -42,6 +37,14 @@ async function verificar() {
             await new Promise(resolve => {
                 document.getElementById('botao').addEventListener('click', resolve)
             })
+
+            if (tentativa > 4) {
+                showHiddenSection()
+                hideGameSection()
+                numero.value = ''
+                mensagens = ``
+                res.innerHTML = ''
+            }
         }
     }
     loop()
@@ -85,9 +88,9 @@ function requirido() {
 
 // Verificar se a seção oculta deve ser mantida ativa ao carregar a página
 window.onload = function() {
-    const expirationTime = localStorage.getItem('expirationTime');
+    const expirationTime = localStorage.getItem('expirationTime')
     if (expirationTime && new Date().getTime() > expirationTime) {
-        hideGameSection();
-        showHiddenSection();
+        hideGameSection()
+        showHiddenSection()
     }
 }
