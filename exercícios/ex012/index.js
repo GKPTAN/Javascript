@@ -28,26 +28,24 @@ async function verificar() {
                 res.innerHTML = mensagens
             }
 
-            if (tentativa === 4) {
-                const expirationTime = new Date().getTime() + (30 * 60 * 1000)
-                localStorage.setItem('expirationTime', expirationTime)
-            }
-
             tentativa++
             await new Promise(resolve => {
                 document.getElementById('botao').addEventListener('click', resolve)
             })
-
-            if (tentativa > 4) {
-                showHiddenSection()
-                hideGameSection()
-                numero.value = ''
-                mensagens = ``
-                res.innerHTML = ''
-            }
+        }
+        if (tentativa > 4) {
+            const expirationTime = new Date().getTime() + (30 * 60 * 1000);
+            localStorage.setItem('expirationTime', expirationTime)
+            showHiddenSection();
+            hideGameSection();
+            numero.value = ''
+            mensagens = ``
+            res.innerHTML = ''
         }
     }
-    loop()
+    if (!localStorage.getItem('expirationTime')) {
+        loop()
+    }
 }
 
 // Função para exibir a seção oculta
