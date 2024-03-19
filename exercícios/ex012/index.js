@@ -82,3 +82,12 @@ function requirido() {
     }
     num.reportValidity()
 }
+
+// Verificar se a seção oculta deve ser mantida ativa ao carregar a página
+window.onload = function() {
+    const expirationTime = localStorage.getItem('expirationTime');
+    if (expirationTime && new Date().getTime() > expirationTime) {
+        hideGameSection();
+        showHiddenSection();
+    }
+}
