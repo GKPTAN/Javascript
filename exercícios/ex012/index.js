@@ -16,7 +16,7 @@ async function verificar() {
         while (tentativa <= 4) {
             const numeroEscolhido = Number(numero.value)
 
-            if (tentativa = 4) {
+            if (tentativa === 4) {
                 showHiddenSection()
                 hideGameSection()
                 numero.value = ''
@@ -31,6 +31,10 @@ async function verificar() {
                 mensagens = ``
                 res.innerHTML = mensagens
                 }, 2000)
+                const botao = document.getElementById('botao')
+                botao.classList.add('hidden')
+                const jogarNovamente = document.getElementById('reset')
+                jogarNovamente.classList.remove('hidden')
             } else {
                 mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroSorteado} <br>`
                 res.innerHTML = mensagens

@@ -51,7 +51,9 @@ section .numero {
     align-items: center;
     padding: 48px;
     width: 62%;
-    margin: auto;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 200%);
     border-radius: 38px;
     border: 1px solid #FDFFE4;
 }
@@ -73,5 +75,6 @@ input:hover {
 }
 
 .hidden {
+    display: none;
     visibility: hidden;
 }
