@@ -16,6 +16,14 @@ async function verificar() {
         while (tentativa <= 4) {
             const numeroEscolhido = Number(numero.value)
 
+            if (tentativa = 4) {
+                showHiddenSection()
+                hideGameSection()
+                numero.value = ''
+                mensagens = ``
+                res.innerHTML = ''
+            }
+
             if (numeroEscolhido === numeroSorteado) {
                 res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
                 setTimeout(() => {
@@ -33,19 +41,8 @@ async function verificar() {
                 document.getElementById('botao').addEventListener('click', resolve)
             })
         }
-        if (tentativa > 4) {
-            const expirationTime = new Date().getTime() + (30 * 60 * 1000);
-            localStorage.setItem('expirationTime', expirationTime)
-            showHiddenSection();
-            hideGameSection();
-            numero.value = ''
-            mensagens = ``
-            res.innerHTML = ''
-        }
     }
-    if (!localStorage.getItem('expirationTime')) {
-        loop()
-    }
+    loop()
 }
 
 // Função para exibir a seção oculta
@@ -82,13 +79,4 @@ function requirido() {
         num.setCustomValidity('')
     }
     num.reportValidity()
-}
-
-// Verificar se a seção oculta deve ser mantida ativa ao carregar a página
-window.onload = function() {
-    const expirationTime = localStorage.getItem('expirationTime')
-    if (expirationTime && new Date().getTime() > expirationTime) {
-        hideGameSection()
-        showHiddenSection()
-    }
 }
