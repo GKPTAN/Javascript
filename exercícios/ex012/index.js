@@ -97,6 +97,8 @@ function toggleFunction() {
     isIndex = !isIndex
     const jogarNovamente = document.getElementById('reset')
     jogarNovamente.classList.add('hidden')
+    const botao = document.getElementById('botao')
+    botao.classList.remove('hidden')
 }
 
 function loadScript(scriptName) {
