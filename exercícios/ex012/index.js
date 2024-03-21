@@ -13,10 +13,10 @@ async function verificar() {
     async function loop() {
 
         let mensagens = ''
-        while (tentativa <= 4) {
+        while (tentativa <= 5) {
             const numeroEscolhido = Number(numero.value)
 
-            if (tentativa === 4) {
+            if (tentativa === 5) {
                 showHiddenSection()
                 hideGameSection()
                 numero.value = ''
@@ -27,6 +27,7 @@ async function verificar() {
             if (numeroEscolhido === numeroSorteado) {
                 res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
                 setTimeout(() => {
+                tentativa = 5
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = mensagens
@@ -83,4 +84,27 @@ function requirido() {
         num.setCustomValidity('')
     }
     num.reportValidity()
+}
+
+let isIndex = true
+
+function toggleFunction() {
+    if (isIndex) {
+        loadScript('reserva.js')
+    } else {
+        loadScript('index.js')
+    }
+    isIndex = !isIndex
+    const jogarNovamente = document.getElementById('reset')
+    jogarNovamente.classList.add('hidden')
+}
+
+function loadScript(scriptName) {
+    const oldScript = document.querySelector('script[src^="index.js"]')
+    oldScript.remove()
+
+    const newScript = document.createElement('script')
+    newScript.src = scriptName
+
+    document.head.appendChild(newScript)
 }
