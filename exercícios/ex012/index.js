@@ -26,18 +26,11 @@ async function verificar() {
 
             if (numeroEscolhido === numeroSorteado) {
                 res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
-                setTimeout(() => {
-                tentativa = 5
-                numero.value = ''
-                mensagens = ``
-                res.innerHTML = mensagens
-                }, 2000)
-                const botao = document.getElementById('botao')
-                botao.classList.add('hidden')
-                const jogarNovamente = document.getElementById('reset')
-                jogarNovamente.classList.remove('hidden')
+                setTimeout(function() {
+                location.reload();
+                }, 1500)
             } else {
-                mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroSorteado} <br>`
+                mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroEscolhido} <br>`
                 res.innerHTML = mensagens
             }
 
@@ -84,29 +77,4 @@ function requirido() {
         num.setCustomValidity('')
     }
     num.reportValidity()
-}
-
-let isIndex = true
-
-function toggleFunction() {
-    if (isIndex) {
-        loadScript('reserva.js')
-    } else {
-        loadScript('index.js')
-    }
-    isIndex = !isIndex
-    const jogarNovamente = document.getElementById('reset')
-    jogarNovamente.classList.add('hidden')
-    const botao = document.getElementById('botao')
-    botao.classList.remove('hidden')
-}
-
-function loadScript(scriptName) {
-    const oldScript = document.querySelector('script[src^="index.js"]')
-    oldScript.remove()
-
-    const newScript = document.createElement('script')
-    newScript.src = scriptName
-
-    document.head.appendChild(newScript)
 }
