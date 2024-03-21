@@ -13,10 +13,10 @@ async function verificar() {
     async function loop() {
 
         let mensagens = ''
-        while (tentativa <= 4) {
+        while (tentativa <= 5) {
             const numeroEscolhido = Number(numero.value)
 
-            if (tentativa === 4) {
+            if (tentativa === 5) {
                 showHiddenSection()
                 hideGameSection()
                 numero.value = ''
