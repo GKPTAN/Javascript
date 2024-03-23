@@ -1,3 +1,7 @@
+window.onload = function() {
+    checkHiddenSection()
+}
+
 // Função para verificar
 async function verificar() {
     // Variáveis
@@ -97,8 +101,4 @@ function checkHiddenSection() {
     } else {
         hideGameSection()
     }
-}
-
-window.onload = function() {
-    checkHiddenSection()
 }
