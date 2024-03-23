@@ -50,8 +50,9 @@ function showHiddenSection() {
     oculto.classList.remove('hidden')
     const corpo = document.getElementById('corpo')
     corpo.style.backgroundColor = 'black'
+    var agora = new Date()
 
-    localStorage.setItem('hideSectionTimestamp', Date.now())
+    localStorage.setItem('hideSectionTimestamp', agora)
 }
 
 // Função para ocultar a seção do jogo
@@ -60,8 +61,9 @@ function hideGameSection() {
     gameSection.classList.add('hidden')
     const cabeca = document.getElementById('cabeca')
     cabeca.classList.add('hidden')
+    var agora = new Date()
 
-    localStorage.setItem('hideSectionTimestamp', Date.now())
+    localStorage.setItem('hideSectionTimestamp', agora)
 }
 
 function nextSpace(event, nextInputId) {
@@ -87,7 +89,7 @@ function requirido() {
 function checkHiddenSection() {
     const hideSectionTimestamp = localStorage.getItem('hideSectionTimestamp')
     if (hideSectionTimestamp) {
-        const currentTime = Date.now()
+        const currentTime = agora.getHours()
         const elapsedTime = currentTime - parseInt(hideSectionTimestamp)
         const thirtyMinutes = 30 * 60 * 1000 // 30 minutos em milissegundos
         if (elapsedTime < thirtyMinutes) {
@@ -98,7 +100,6 @@ function checkHiddenSection() {
     } else {
         hideGameSection()
     }
-    console.log(hideSectionTimestamp)
 }
 
 window.onload = function() {
