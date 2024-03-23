@@ -60,6 +60,8 @@ function hideGameSection() {
     gameSection.classList.add('hidden')
     const cabeca = document.getElementById('cabeca')
     cabeca.classList.add('hidden')
+
+    localStorage.setItem('hideSectionTimestamp', Date.now())
 }
 
 function nextSpace(event, nextInputId) {
