@@ -50,10 +50,8 @@ function showHiddenSection() {
     oculto.classList.remove('hidden')
     const corpo = document.getElementById('corpo')
     corpo.style.backgroundColor = 'black'
-    var agora = new Date()
-    var hora = agora.getMinutes()
 
-    localStorage.setItem('hideSectionTimestamp', hora)
+    localStorage.setItem('hideSectionTimestamp', Date.now())
 }
 
 // Função para ocultar a seção do jogo
@@ -65,7 +63,7 @@ function hideGameSection() {
     var agora = new Date()
     var hora = agora.getMinutes()
 
-    localStorage.setItem('hideSectionTimestamp', hora)
+    localStorage.setItem('hideSectionTimestamp', Date.now())
 }
 
 function nextSpace(event, nextInputId) {
