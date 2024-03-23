@@ -98,6 +98,7 @@ function checkHiddenSection() {
     } else {
         hideGameSection()
     }
+    console.log(hideSectionTimestamp)
 }
 
 window.onload = function() {
