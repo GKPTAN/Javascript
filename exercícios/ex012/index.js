@@ -58,8 +58,6 @@ function hideGameSection() {
     gameSection.classList.add('hidden')
     const cabeca = document.getElementById('cabeca')
     cabeca.classList.add('hidden')
-    var agora = new Date()
-    var hora = agora.getMinutes()
 }
 
 function nextSpace(event, nextInputId) {
@@ -81,5 +79,3 @@ function requirido() {
     }
     num.reportValidity()
 }
-
-localStorage.removeItem("hideSectionTimestamp")
