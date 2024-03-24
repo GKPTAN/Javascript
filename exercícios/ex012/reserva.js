@@ -4,17 +4,26 @@ async function verificar() {
     const numero = document.getElementById('numero')
     const res = document.getElementById('res')
     const numeroSorteado = sorteio(1, 10)
-    var tentativa = 1
+    let tentativa = 1
 
     function sorteio(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
     }
 
     async function loop() {
-
         let mensagens = ''
         while (tentativa <= 5) {
             const numeroEscolhido = Number(numero.value)
+
+            if (numeroEscolhido === numeroSorteado) {
+                res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
+                setTimeout(function() {
+                    location.reload();
+                }, 1500)
+            } else {
+                mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroSorteado} <br>`
+                res.innerHTML = mensagens
+            }
 
             if (tentativa === 5) {
                 showHiddenSection()
@@ -22,22 +31,8 @@ async function verificar() {
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = ''
-            }
-
-            if (numeroEscolhido === numeroSorteado) {
-                res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
-                setTimeout(() => {
-                numero.value = ''
-                mensagens = ``
-                res.innerHTML = mensagens
-                }, 2000)
-                const botao = document.getElementById('botao')
-                botao.classList.add('hidden')
-                const jogarNovamente = document.getElementById('reset')
-                jogarNovamente.classList.remove('hidden')
-            } else {
-                mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroSorteado} <br>`
-                res.innerHTML = mensagens
+                const expirationTime = new Date().getTime() + (30 * 60 * 1000);
+                localStorage.setItem('expirationTime', expirationTime)
             }
 
             tentativa++
@@ -85,25 +80,12 @@ function requirido() {
     num.reportValidity()
 }
 
-function toggleFunction() {
-    if (isIndex) {
-        loadScript('reserva.js')
+// Verificar se a seção oculta deve ser mantida ativa ao carregar a página
+window.onload = function() {
+    const expirationTime = localStorage.getItem('expirationTime');
+    if (expirationTime && new Date().getTime() > expirationTime) {
+        hideGameSection();
     } else {
-        loadScript('index.js')
+        showHiddenSection();
     }
-    isIndex = !isIndex
-    const jogarNovamente = document.getElementById('reset')
-    jogarNovamente.classList.add('hidden')
-    const botao = document.getElementById('botao')
-    botao.classList.remove('hidden')
-}
-
-function loadScript(scriptName) {
-    const oldScript = document.querySelector('script[src^="index.js"]')
-    oldScript.remove()
-
-    const newScript = document.createElement('script')
-    newScript.src = scriptName
-
-    document.head.appendChild(newScript)
 }
