@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            display: flex;
+            padding: 20px 20px 20px 20px;
+            gap: 30px;
+            transform: translate(40%, 500%);
+            width: 50vw;
+        }
+
+        section input[type="button"] {
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        section input[type="button"]:active {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body id="fundo">
+    <section id="quadrado">
+        <p>
+            <input id="azul" type="button" value="Azul" onclick="azul()">
+        </p>
+        <p>
+            <input id="verde" type="button" value="verde">
+        </p>
+        <p>
+            <input id="preto" type="button" value="preto" onclick="preto()">
+        </p>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
