@@ -14,11 +14,14 @@ function preto() {
     const funcoesSalvas = localStorage.getItem('funcoes')
 
     if (funcoesSalvas) {
-        const {azul, preto, expirationTime} = JSON.parse(funcoesSalvas)
+        const {azul: azulString, preto: pretoString, expirationTime} = JSON.parse(funcoesSalvas)
 
         if (new Date().getTime() < expirationTime) {
-            azul
-            preto
+        const azulFuncao = new Function('return ' + azulString)();
+        const pretoFuncao = new Function('return ' + pretoString)();
+
+        azul()
+        preto()
         }
     }
 
