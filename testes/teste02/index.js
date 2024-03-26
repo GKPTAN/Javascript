@@ -9,19 +9,6 @@ function preto() {
     secao.style.backgroundColor = 'black'
 }
 
-function aplicarCores() {
-    // Verifica se as funções azul() e preto() estão definidas
-    if (typeof azul === 'function' && typeof preto === 'function') {
-        // Aplica a cor azul ao carregar a página
-        azul();
-        // Aplica a cor preta ao carregar a página
-        preto();
-    } else {
-        // Exibe uma mensagem de erro se as funções não estiverem definidas
-        console.log('As funções não estão definidas.');
-    }
-}
-
 // Função para armazenar as funções no localStorage por 30 minutos
 function salvarFuncoes() {
     // Obtém a data e hora atuais
@@ -55,8 +42,6 @@ function verificarFuncoes() {
         console.log('As funções não estão mais disponíveis.')
     }
 }
-
-aplicarCores()
 
 // Chama a função para salvar as funções no localStorage
 salvarFuncoes()
