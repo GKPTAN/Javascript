@@ -7,7 +7,7 @@ const secao = document.getElementById('quadrado')
 // Verifica se há um valor de cor de fundo armazenado no localStorage
 const corSalva = localStorage.getItem('corDeFundo')
 if (corSalva) {
-    const { cor, expiracao, fundo } = JSON.parse(corSalva);
+    const { cor, expiracao, fundo } = JSON.parse(corSalva)
     // Verifica se o tempo de expiração ainda não foi alcançado
     if (new Date().getTime() < expiracao) {
         corDeFundo.style.backgroundColor = cor

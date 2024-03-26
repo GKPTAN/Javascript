@@ -10,20 +10,17 @@ function preto() {
 }
 
 // Função para verificar se as funções armazenadas no localStorage estão válidas
-function verificarFuncoes() {
     // Obtém as funções armazenadas do localStorage
-    const funcoesArmazenadas = JSON.parse(localStorage.getItem('funcoes'))
+    const funcoesSalvas = localStorage.getItem('funcoes')
 
-    // Verifica se as funções estão armazenadas e se ainda estão dentro do prazo de validade
-    if (funcoesArmazenadas && new Date().getTime() < funcoesArmazenadas.expirationTime) {
-        // Avalia as strings das funções para convertê-las de volta em funções
-        eval(funcoesArmazenadas.azul)
-        eval(funcoesArmazenadas.preto)
-    } else {
-        // As funções não estão mais válidas ou não existem no localStorage
-        console.log('As funções não estão mais disponíveis.')
+    if (funcoesSalvas) {
+        const {azul, preto, expirationTime} = JSON.parse(funcoesSalvas)
+
+        if (new Date().getTime() < expirationTime) {
+            azul
+            preto
+        }
     }
-}
 
 // Função para armazenar as funções no localStorage por 30 minutos
 function salvarFuncoes() {
@@ -42,9 +39,6 @@ function salvarFuncoes() {
     // Armazena o objeto no localStorage como uma string JSON
     localStorage.setItem('funcoes', JSON.stringify(funcoesArmazenadas))
 }
-
-// Chama a função para verificar se as funções armazenadas no localStorage estão válidas
-verificarFuncoes()
 
 // Chama a função para salvar as funções no localStorage
 salvarFuncoes()
