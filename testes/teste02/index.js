@@ -9,6 +9,22 @@ function preto() {
     secao.style.backgroundColor = 'black'
 }
 
+// Função para verificar se as funções armazenadas no localStorage estão válidas
+function verificarFuncoes() {
+    // Obtém as funções armazenadas do localStorage
+    const funcoesArmazenadas = JSON.parse(localStorage.getItem('funcoes'))
+
+    // Verifica se as funções estão armazenadas e se ainda estão dentro do prazo de validade
+    if (funcoesArmazenadas && new Date().getTime() < funcoesArmazenadas.expirationTime) {
+        // Avalia as strings das funções para convertê-las de volta em funções
+        eval(funcoesArmazenadas.azul)
+        eval(funcoesArmazenadas.preto)
+    } else {
+        // As funções não estão mais válidas ou não existem no localStorage
+        console.log('As funções não estão mais disponíveis.')
+    }
+}
+
 // Função para armazenar as funções no localStorage por 30 minutos
 function salvarFuncoes() {
     // Obtém a data e hora atuais
@@ -27,23 +43,8 @@ function salvarFuncoes() {
     localStorage.setItem('funcoes', JSON.stringify(funcoesArmazenadas))
 }
 
-// Função para verificar se as funções armazenadas no localStorage estão válidas
-function verificarFuncoes() {
-    // Obtém as funções armazenadas do localStorage
-    const funcoesArmazenadas = JSON.parse(localStorage.getItem('funcoes'))
-
-    // Verifica se as funções estão armazenadas e se ainda estão dentro do prazo de validade
-    if (funcoesArmazenadas && new Date().getTime() < funcoesArmazenadas.expirationTime) {
-        // Avalia as strings das funções para convertê-las de volta em funções
-        eval(funcoesArmazenadas.azul)
-        eval(funcoesArmazenadas.preto)
-    } else {
-        // As funções não estão mais válidas ou não existem no localStorage
-        console.log('As funções não estão mais disponíveis.')
-    }
-}
+// Chama a função para verificar se as funções armazenadas no localStorage estão válidas
+verificarFuncoes()
 
 // Chama a função para salvar as funções no localStorage
 salvarFuncoes()
-// Chama a função para verificar se as funções armazenadas no localStorage estão válidas
-verificarFuncoes()
