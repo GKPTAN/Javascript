@@ -17,11 +17,11 @@ function preto() {
         const {azul: azulString, preto: pretoString, expirationTime} = JSON.parse(funcoesSalvas)
 
         if (new Date().getTime() < expirationTime) {
-        const azulFuncao = new Function('return ' + azulString)();
-        const pretoFuncao = new Function('return ' + pretoString)();
+        const azulFuncao = new Function('return ' + azulString)()
+        const pretoFuncao = new Function('return ' + pretoString)()
 
-        azul()
-        preto()
+        azulFuncao()
+        pretoFuncao()
         }
     }
 
