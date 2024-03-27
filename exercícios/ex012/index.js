@@ -96,7 +96,7 @@ function requirido() {
 }
 
 // Função para armazenar as funções no localStorage por 30 minutos
-async function salvarFuncoes() {
+function salvarFuncoes() {
     // Obtém a data e hora atuais
     const now = new Date().getTime()
 
