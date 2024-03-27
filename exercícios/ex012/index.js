@@ -1,3 +1,17 @@
+// Obtém as funções armazenadas do localStorage
+const funcoesSalvas = localStorage.getItem('funcoes')
+
+if (funcoesSalvas) {
+    const {hidden: showHiddenSectionString, game: hideGameSectionString, expirationTime} = JSON.parse(funcoesSalvas)
+
+    if (new Date().getTime() < expirationTime) {
+    const funcaoMostrar = new Function('return ' + showHiddenSectionString)()
+    const funcaoEsconder = new Function('return ' + hideGameSectionString)()
+
+    funcaoMostrar()
+    funcaoEsconder()
+    }
+}
 
 // Função para verificar
 async function verificar() {
@@ -23,6 +37,7 @@ async function verificar() {
                 numero.value = ''
                 mensagens = ``
                 res.innerHTML = ''
+                salvarFuncoes()
             }
 
             if (numeroEscolhido === numeroSorteado) {
@@ -78,4 +93,23 @@ function requirido() {
         num.setCustomValidity('')
     }
     num.reportValidity()
+}
+
+// Função para armazenar as funções no localStorage por 30 minutos
+function salvarFuncoes() {
+    // Obtém a data e hora atuais
+    const now = new Date().getTime()
+
+    // Define a data e hora de expiração para 30 minutos a partir de agora
+    const expirationTime = now + (30 * 60 * 1000)
+
+    // Cria um objeto contendo as funções e a data de expiração
+    const funcoesArmazenadas = {
+        hidden: showHiddenSection.toString(),
+        game: hideGameSection.toString(),
+        expirationTime: expirationTime
+    }
+
+    // Armazena o objeto no localStorage como uma string JSON
+    localStorage.setItem('funcoes', JSON.stringify(funcoesArmazenadas))
 }
