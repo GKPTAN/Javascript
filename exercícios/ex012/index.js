@@ -31,15 +31,6 @@ async function verificar() {
         while (tentativa <= 5) {
             const numeroEscolhido = Number(numero.value)
 
-            if (tentativa === 5) {
-                showHiddenSection()
-                hideGameSection()
-                numero.value = ''
-                mensagens = ``
-                res.innerHTML = ''
-                salvarFuncoes()
-            }
-
             if (numeroEscolhido === numeroSorteado) {
                 res.innerHTML = 'PARABÉNS, VOCÊ ACERTOU'
                 setTimeout(function() {
@@ -48,6 +39,15 @@ async function verificar() {
             } else {
                 mensagens += `VOCÊ ERROU, tentativa ${tentativa} de 4, seu número ${numeroEscolhido} <br>`
                 res.innerHTML = mensagens
+            }
+
+            if (tentativa === 5) {
+                showHiddenSection()
+                hideGameSection()
+                numero.value = ''
+                mensagens = ``
+                res.innerHTML = ''
+                salvarFuncoes()
             }
 
             tentativa++
