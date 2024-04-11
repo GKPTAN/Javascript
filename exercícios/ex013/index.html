@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatório de Números</title>
+</head>
+<body>
+    <h1>Somatório de Números</h1>
+    <p>Digite vários números. O somatório será calculado no final.</p>
+    <input type="number" id="numeroInput" placeholder="Digite um número...">
+    <button onclick="adicionarNumero()">Adicionar Número</button>
+    <button onclick="calcularSomatorio()">Calcular Somatório</button>
+    <p id="numerosInseridos"></p>
+    <p id="resultadoSomatorio"></p>
+
+    <script>
+        let numeros = [];
+
+        function adicionarNumero() {
+            const numeroInput = document.getElementById('numeroInput');
+            const numero = parseInt(numeroInput.value);
+            if (!isNaN(numero)) {
+                if (numero === 1111) {
+                    alert('Leitura de números interrompida.');
+                    numeroInput.value = '';
+                } else {
+                    numeros.push(numero);
+                    document.getElementById('numerosInseridos').textContent += `${numero}, `;
+                    numeroInput.value = '';
+                }
+            } else {
+                alert('Por favor, digite um número válido.');
+            }
+        }
+
+        function calcularSomatorio() {
+            const resultadoSomatorio = document.getElementById('resultadoSomatorio');
+            const somatorio = numeros.reduce((acc, cur) => acc + cur, 0);
+            resultadoSomatorio.textContent = `Somatório: ${somatorio}`;
+        }
+    </script>
+</body>
+</html>
