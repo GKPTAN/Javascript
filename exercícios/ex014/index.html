@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/style.css">
+    <title>Processamento de salários por gênero</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Processamento de salários por gênero</h1>
+    </header>
+
+    <section class="secao-informacoes">
+        <div class="informacoes">
+            <p>
+                <label for="nome">Digite o nome do funcionário:</label>
+                <input type="text" name="nome" id="nome" placeholder="digite aqui..." size="30">
+            </p>
+            <p>
+                <label for="sexo">Qual o sexo do funcionário?</label>
+                <input type="radio" name="sexo" id="sexo" class="homem"> Masculino
+                <input type="radio" name="sexo" id="sexo" class="mulher"> Feminino
+            </p>
+            <p>
+                <label for="salario">Digite o salario do funcionário:</label>
+                <input type="number" name="salario" id="salario" placeholder="digite aqui...">
+            </p>
+        </div>
+
+        <p class="botoes">
+            <input class="botao1" type="button" value="Adicionar funcionário" onclick="adicionarFuncionario()">
+            <input class="botao2" type="button" value="Ver o salário total" onclick="salarioTotal()">
+        </p>
+
+        <div class="resultado">
+            <p id="res"></p>
+        </div>
+    </section>
+</body>
+</html>

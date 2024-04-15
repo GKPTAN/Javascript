@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #008081;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cabecalho {
+    background-color: white;
+    padding: 53px 0px;
+    margin-bottom: 23px;
+    text-align: center;
+}
+
+.cabecalho .titulo {
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.secao-informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 65px 0px;
+    width: 61%;
+    margin: auto;
+    border-radius: 94px;
+    box-shadow: 0px 0px 10px #0075C2;
+}
+
+.secao-informacoes .informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.secao-informacoes .informacoes label {
+    margin-right: 5px;
+}
+
+.secao-informacoes .informacoes input[type="text"] {
+    border: 2px solid #FA9403;
+}
+
+::placeholder {
+    font-weight: bold;
+    font-size: 17x;
+}
+
+.secao-informacoes .informacoes input[type="number"] {
+    border: 2px solid #FA9403;
+}
+
+.secao-informacoes .botoes {
+    display: flex;
+    gap: 30px;
+}
+
+.secao-informacoes .botoes input[type="button"] {
+    background-color: white;
+    font-weight: bold;
+    border: 2px solid #0173A5;
+    border-radius: 51px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.botoes input[type="button"]:active {
+    background-color: #0075C2;
+    color: white;
+    padding: 7px;
+}
+
+.secao-informacoes .resultado #res {
+    transition: all 0.5s ease-in-out;
+}
