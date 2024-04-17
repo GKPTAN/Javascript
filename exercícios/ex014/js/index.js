@@ -7,20 +7,19 @@ function adicionarFuncionario() {
     const nomeFuncionario = document.getElementById('nome').value
     let sexo;
     const valorSalario = Number(salario.value)
-
-    if (!sexoMasculino.checked && !sexoFeminino.checked) {
-        let aviso = document.getElementById('aviso')
-        aviso.style.visibility = 'none'
-        return
-    } else {
-        let aviso = document.getElementById('aviso')
-        aviso.style.visibility = 'hidden'
-    }
+    const aviso = document.getElementById('aviso')
 
     if (nomeFuncionario.length === 0) {
         document.getElementById('nome').setCustomValidity('Campo obrigatório')
         document.getElementById('nome').reportValidity()
         return
+    }
+
+    if (!sexoMasculino.checked && !sexoFeminino.checked) {
+        aviso.style.visibility = 'none'
+        return
+    } else {
+        aviso.style.visibility = 'hidden'
     }
 
     if (isNaN(salario) || salario.length === 0 || salario < 0) {
