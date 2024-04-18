@@ -69,9 +69,11 @@ function salarioTotal() {
         }
     }
 
-    res.style.backgroundColor = 'white'
+    const resultado = document.getElementById('resultado')
+
+    resultado.style.backgroundColor = 'white'
+    resultado.style.padding = '30px'
+    resultado.style.borderRadius = '20px'
     res.style.color = 'black'
-    res.style.padding = '30px'
-    res.style.borderRadius = '20px'
     res.innerHTML = `Total de salários do sexo Masculino: R$${totalSalariosHomens} reais<br> Total de salários do sexo Feminino: R$${totalSalariosMulheres} reais`
 }
