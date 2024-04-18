@@ -1,5 +1,5 @@
-const sexoMasculino = document.getElementsByName("sexo")[0]
-const sexoFeminino = document.getElementsByName("sexo")[1]
+const sexoMasculino = document.getElementById('sexo-masculino')
+const sexoFeminino = document.getElementById('sexo-feminino')
 const salario = document.getElementById('salario')
 let dados = []
 
@@ -7,7 +7,7 @@ function adicionarFuncionario() {
     const nomeFuncionario = document.getElementById('nome').value
     let sexo;
     const valorSalario = Number(salario.value)
-    const aviso = document.getElementById('aviso')
+    let aviso = document.getElementById('aviso')
 
     if (nomeFuncionario.length === 0) {
         document.getElementById('nome').setCustomValidity('Campo obrigatório')
@@ -22,7 +22,7 @@ function adicionarFuncionario() {
         aviso.style.visibility = 'hidden'
     }
 
-    if (isNaN(salario) || salario.length === 0 || salario < 0) {
+    if (salario.length === 0 || salario < 0) {
         salario.setCustomValidity('Campo obrigatório')
         salario.reportValidity()
         return
@@ -43,7 +43,8 @@ function adicionarFuncionario() {
     dados.push(funcionario)
 
     document.getElementById('nome').value = ''
-    document.getElementById('sexo').checked = false
+    document.getElementById('sexo-masculino').checked = false
+    document.getElementById('sexo-feminino').checked = false
     document.getElementById('salario').value = ''
 
     window.alert("funcionário adicionado")

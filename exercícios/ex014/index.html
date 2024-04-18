@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
     <title>Processamento de salários por gênero</title>
 </head>
+
 <body>
     <header class="cabecalho">
         <h1 class="titulo">Processamento de salários por gênero</h1>
@@ -15,17 +17,17 @@
         <div class="informacoes">
             <p>
                 <label for="nome">Digite o nome do funcionário:</label>
-                <input type="text" name="nome" id="nome" placeholder="digite aqui..." size="30">
+                <input type="text" name="nomes" id="nome" placeholder="digite aqui..." size="30">
             </p>
             <p>
-                <label for="sexo">Qual o sexo do funcionário?</label>
-                <input type="radio" name="sexo" id="sexo" value="Masculino"> Masculino
-                <input type="radio" name="sexo" id="sexo feminino" value="Feminino"> Feminino
-                <span class="aviso">*Opção obrigatória</span>
+                Qual o sexo do funcionário?
+                <input type="radio" name="genero" id="sexo-masculino" value="Masculino"> <label for="sexo-masculino">Masculino</label>
+                <input type="radio" name="genero" id="sexo-feminino" value="Feminino"> <label for="sexo-feminino">Feminino</label>
+                <span class="aviso" id="aviso">*Opção obrigatória</span>
             </p>
             <p>
                 <label for="salario">Digite o salario do funcionário:</label>
-                <input type="number" name="salario" id="salario" placeholder="digite aqui...">
+                <input type="number" name="salarios" id="salario" placeholder="digite aqui...">
             </p>
         </div>
 
@@ -41,4 +43,5 @@
 
     <script src="js/index.js"></script>
 </body>
+
 </html>
