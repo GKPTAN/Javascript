@@ -5,34 +5,40 @@ let dados = []
 
 function adicionarFuncionario() {
     const nomeFuncionario = document.getElementById('nome').value
-    let sexo;
-    const valorSalario = Number(salario.value)
-    let aviso = document.getElementById('aviso')
+    const aviso = document.getElementById('aviso')
 
     if (nomeFuncionario.length === 0) {
         document.getElementById('nome').setCustomValidity('Campo obrigatório')
         document.getElementById('nome').reportValidity()
         return
+    } else {
+        document.getElementById('nome').setCustomValidity('')
     }
 
     if (!sexoMasculino.checked && !sexoFeminino.checked) {
-        aviso.style.visibility = 'none'
+        aviso.innerHTML = '*Opção obrigatória'
         return
     } else {
-        aviso.style.visibility = 'hidden'
+        aviso.innerHTML = ''
     }
 
-    if (salario.length === 0 || salario < 0) {
+    if (salario.value.trim() === '' || parseFloat(salario.value) < 0) {
         salario.setCustomValidity('Campo obrigatório')
         salario.reportValidity()
         return
+    } else {
+        salario.setCustomValidity('')
     }
+
+    let sexo = ''
 
     if (sexoMasculino.checked) {
         sexo = sexoMasculino.value
     } else if (sexoFeminino.checked) {
         sexo = sexoFeminino.value
     }
+
+    const valorSalario = parseFloat(salario.value)
 
     const funcionario = {
         nome: nomeFuncionario,
@@ -47,7 +53,7 @@ function adicionarFuncionario() {
     document.getElementById('sexo-feminino').checked = false
     document.getElementById('salario').value = ''
 
-    window.alert("funcionário adicionado")
+    window.alert("funcionário adicionado com sucesso")
 }
 
 function salarioTotal() {
