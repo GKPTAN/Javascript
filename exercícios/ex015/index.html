@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dados</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Dados e Estatísticas</h1>
+    </header>
+
+    <section class="secao">
+        <p class="nome-pessoa"> 
+            <label for="nome">Digite o nome do entrevistado:</label>
+            <input type="text" name="pessoa" id="nome" placeholder="Digite Aqui..." size="30" required>
+        </p>
+
+        <p class="idade-numero">
+            <label for="idade">Idade</label>
+            <input type="number" name="numero" id="idade" required min="1">
+        </p>
+
+        <p class="genero-sexual">
+            Sexo:
+            <input type="radio" name="genero" id="sexo-masculino"><label for="sexo-masculino"> Masculino</label>
+            <input type="radio" name="genero" id="sexo-feminino"><label for="sexo-feminino"> Feminino</label>
+        </p>
+
+        <p class="botoes">
+            <input type="button" value="Adicionar Dados" onclick="adicionarDados()">
+            <input type="button" value="Ver Estatísticas" onclick="verEstatisticas()">
+        </p>
+
+        <p id="res"></p>
+    </section>
+</body>
+</html>
