@@ -63,6 +63,19 @@ body {
     font-size: 16px;
 }
 
+.secao .genero-sexual {
+    position: relative;
+}
+
+.secao #aviso {
+    position: absolute;
+    top: 49.5%;
+    left: 19.5%;
+    font-size: 16px;
+    color: rgb(238, 104, 104);
+    transition: all 0.3s ease-in-out;
+}
+
 .secao .botoes {
     display: flex;
     margin-top: 40px;
