@@ -62,12 +62,52 @@ function verEstatisticas() {
     let somaIdades = 0
     let quantidadeHomensMaisDe30 = 0
     let quantidadeMulheresMenosDe18 = 0
-    let nomePessoaMaisVelha = ''
-    let nomeMulherMaisJovem = ''
-    let mediaIdade = 0
+    let nomePessoaMaisVelha = []
+    let nomeMulherMaisJovem = []
+    let media;
+    let contadorPessoas = 0
 
     if (dados.length === 0) {
         res.style.backgroundColor = 'white'
         res.innerHTML = '[ERRO] Sem dados disponíveis'
     }
+
+    for (let pessoa of dados) {
+        somaIdades = somaIdades + pessoa.idade
+
+        if (pessoa.idade > idadePessoaMaisVelha) {
+            idadePessoaMaisVelha = pessoa.idade
+            nomePessoaMaisVelha = [pessoa.nome]
+        } else if (pessoa.idade === idadePessoaMaisVelha) {
+            nomePessoaMaisVelha.push(pessoa.nome)
+        }
+
+        if (pessoa.sexo === 'Feminino' && pessoa.idade < idadeMulherMaisJovem) {
+            idadeMulherMaisJovem = pessoa.idade
+            nomeMulherMaisJovem = [pessoa.nome]
+        } else if (pessoa.idade === idadeMulherMaisJovem) {
+            nomeMulherMaisJovem.push(pessoa.nome)
+        }
+
+        if (pessoa.sexo === 'Masculino' && pessoa.idade > 30) {
+            quantidadeHomensMaisDe30++
+        }
+
+        if (pessoa.sexo === 'Feminino' && pessoa.idade < 18) {
+            quantidadeMulheresMenosDe18++
+        }
+
+        contadorPessoas++
+    }
+
+    media = somaIdades / contadorPessoas
+
+    let mediaIdade = parseFloat(media)
+
+    res.style.backgroundColor = 'white'
+    res.innerHTML = `A(s) pessoa(s) mais velha(s) se chama(m):  (${nomePessoaMaisVelha.join(', ')}).<br>`
+    res.innerHTML += `A(s) mulher(es) mais jovem(ns) se chama(m): (${nomeMulherMaisJovem.join(', ')}).<br>`
+    res.innerHTML += `A média de idade do grupo de pessoas é de ${mediaIdade} anos de idade.<br>`
+    res.innerHTML += `Quantidade de homens com mais de 30 anos: ${quantidadeHomensMaisDe30}<br>`
+    res.innerHTML += `Quantidade de mulheres com menos de 18 anos: ${quantidadeMulheresMenosDe18}<br>`
 }
