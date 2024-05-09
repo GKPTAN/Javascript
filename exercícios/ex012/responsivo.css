@@ -30,6 +30,7 @@
 
     #game {
         width: 90vw;
+        padding: 24px 25px;
     }
 
     #game .numero {
