@@ -22,7 +22,7 @@
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 430px) and (orientation: portrait) {
     .cabecalho .titulo {
         font-size: 1.5em;
         text-align: center;
