@@ -21,7 +21,7 @@ async function verificar() {
     const numeroSorteado = sorteio(1, 10)
     var tentativa = 1
 
-    res.style.padding = '30px 0px'
+    res.style.padding = '0px 0px 10px 0px'
 
     function sorteio(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
