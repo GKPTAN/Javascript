@@ -78,3 +78,7 @@ input:hover {
     display: none;
     visibility: hidden;
 }
+
+.mensagem {
+    visibility: hidden;
+}

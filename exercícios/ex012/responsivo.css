@@ -1,3 +1,4 @@
+
 @media (max-width: 645px) {
     .cabecalho .titulo {
         font-size: 2em;
@@ -11,15 +12,17 @@
 
 @media (max-width: 450px) {
     #game {
-        display: flex;
         width: 82%;
-        justify-content: space-between;
         padding: 12px 50px;
         font-size: 12px;
     }
 
     #game .numero {
         margin-bottom: 20px;
+    }
+
+    .mensagem {
+        visibility: visible;
     }
 }
 
