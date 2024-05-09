@@ -45,4 +45,8 @@
         font-size: 12px;
         margin-left: 10px;
     }
+
+    #oculto {
+        transform: translateY(50vw);
+    }
 }
