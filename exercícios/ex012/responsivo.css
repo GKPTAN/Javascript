@@ -5,7 +5,7 @@
     }
 
     #game {
-        padding: 24px 10px;
+        padding: 48px 10px;
         font-size: 14px;
     }
 }
@@ -13,7 +13,7 @@
 @media (max-width: 450px) {
     #game {
         width: 82%;
-        padding: 12px 50px;
+        padding: 48px 50px;
         font-size: 12px;
     }
 
@@ -30,7 +30,6 @@
 
     #game {
         width: 90vw;
-        max-height: 160px;
     }
 
     #game .numero {
