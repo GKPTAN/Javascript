@@ -51,9 +51,10 @@ section .numero {
     align-items: center;
     padding: 48px;
     width: 62%;
+    position: absolute;
     top: 0;
     left: 0;
-    transform: translate(0%, 200%);
+    transform: translate(30%, 50%);
     border-radius: 38px;
     border: 1px solid #FDFFE4;
 }
