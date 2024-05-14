@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +10,17 @@
         input[type="button"] {
             margin-left: 30px;
             cursor: pointer;
-        }    
+        }
     </style>
 </head>
+
 <body>
     <h1>Contagem</h1>
     <input type="button" value="ver contagem" onclick="contar()">
 
     <p id="res"></p>
 
-    <script>
-        function contar() {
-        const res = document.getElementById('res')
-        var c = 0
-        var cont = Number(c)
-
-        var intervalo = setInterval(function() {
-            res.innerHTML += ` ${cont},`
-            do {
-                cont = cont + 3
-            } while (cont <= 30)
-        }, 1000)
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
+
 </html>
