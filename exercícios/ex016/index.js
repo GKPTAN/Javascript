@@ -1,10 +1,21 @@
+let numeros = []
+const res = document.getElementById('res')
+
 function contar() {
-    const res = document.getElementById('res')
     var c = 0
-    do {
-        res.innerHTML += ` ${c},`
-        c = c + 3
-    } while (c <= 30)
-    console.log(res)
-    res.innerHTML += ' acabou!'
+    var intervalo = setInterval(() => {
+        do {
+            numeros.push(c)
+            parar()
+            res.innerHTML = ` ${numeros.join(', ')}`
+            c = c + 3
+        } while (c <= 1)
+    }, 1000)
+
+    function parar() {
+        if (numeros.length === 11) {
+            clearInterval(intervalo)
+            numeros.push('acabou!')
+        }
+    }
 }
