@@ -24,6 +24,7 @@ body {
     & .formulario {
         display: flex;
         flex-direction: column;
+        height: 411px;
         margin-left: 64px;
         width: 33%;
         background-color: white;
@@ -50,6 +51,7 @@ body {
         & .botoes {
             margin-top: 10px;
             display: inherit;
+            height: 45px;
             gap: 180px;
 
             & input[type="button"] {
@@ -63,7 +65,7 @@ body {
                     padding: 5px 5px;
                     font-size: 16px;
                     color: white;
-                    margin: 0px 12.57px;
+                    margin: 6px 10.64px 6px 14.35px;
                 }
             }
         }
