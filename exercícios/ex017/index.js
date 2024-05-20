@@ -57,7 +57,22 @@ async function parar() {
 }
 
 function verEstatisticas() {
-    
+    let pessoasCom21AnosOuMais = 0
+    let somaIdades = 0
+    let contadorPessoas = 0
+
+    for (let pessoa of dados) {
+        somaIdades = parseFloat(somaIdades + pessoa.idade)
+
+        if (pessoa.idade >= 21) {
+            pessoasCom21AnosOuMais++
+        }
+
+        contadorPessoas++
+    }
+
+    let media = somaIdades / contadorPessoas
+
     const res = document.getElementById('res')
-    res.innerHTML = `Quantidade de idades digitadas: ${dados.length}`
+    res.innerHTML = `Quantidade de idades digitadas: ${dados.length}. <br> Média de idade do grupo: ${media} anos. <br> Quantidade de pessoas com 21 anos ou mais: ${pessoasCom21AnosOuMais} pessoa(s)`
 }
