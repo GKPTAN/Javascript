@@ -43,7 +43,7 @@ body {
         }
 
         & input[type="number"] {
-            width: 8%;
+            width: 11%;
             font-size: 18px;
             text-indent: 1px;
         }
@@ -52,7 +52,11 @@ body {
             margin-top: 10px;
             display: inherit;
             height: 45px;
-            gap: 180px;
+            gap: 87.9px;
+
+            & h4 {
+                line-height: 40px;
+            }
 
             & input[type="button"] {
                 padding: 10px;
@@ -65,9 +69,18 @@ body {
                     padding: 5px 5px;
                     font-size: 16px;
                     color: white;
-                    margin: 6px 10.64px 6px 14.35px;
+                    margin: 6px 10.5px 6px 3.04px;
                 }
+            }
+
+            & input[type="button"]:nth-child(3) {  
+                margin-left: 0.2px;
             }
         }
     }
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }

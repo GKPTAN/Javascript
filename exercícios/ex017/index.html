@@ -20,15 +20,19 @@
         
         <div class="idade">
             <label for="idade">Idade:</label>
-            <input type="number" name="idade-pessoa" id="idade">
+            <input type="number" name="idade-pessoa" id="idade" min="1" required>
         </div>
 
         <div class="botoes">
-            <input type="button" value="adicionar pessoa">
-            <input type="button" value="ver estatísticas">
+            <h4 class="">Você quer continuar?</h4>
+            <input id="sim" type="button" value="Sim" onclick="continuar()">
+            <input id="nao" type="button" value="Não" onclick="parar()">
+            <input class="hidden" id="estatisticas" type="button" value="ver estatísticas" onclick="verEstatisticas()">
         </div>
 
         <p id="res"></p>
     </form>
+
+    <script src="index.js"></script>
 </body>
 </html>
