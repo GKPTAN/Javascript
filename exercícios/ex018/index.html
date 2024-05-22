@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Números</title>
 </head>
 <body>
-    <h1>Somatório de números e estatísticas</h1>
-    <p>soma todos os números digitados e mostra algumas estatísticas</p>
-    <form>
-        <div class="numeros">
-            <label for="numero">adicionar número:</label>
-            <input type="number" name="numeros" id="numero" required>
-        </div>
-        <div class="botoes">
-            <input type="button" value="Sim">
-            <input type="button" value="Não">
-        </div>
-        <p id="res"></p>
-    </form>
+    <header class="cabecalho">
+        <h1 class="titulo">Somatório de números e estatísticas</h1>
+        <p class="descricao">soma todos os números digitados e mostra algumas estatísticas</p>
+    </header>
+    <main class="conteudo">
+        <form class="formulario">
+            <div class="numeros">
+                <label for="numero">Adicionar número:</label>
+                <input type="number" name="numeros" id="numero" required>
+            </div>
+            <div class="botoes">
+                <input class="hidden" type="button" value="adicionar número">
+                <p class="hidden">Você quer continuar?</p>
+                <input class="hidden" type="button" value="Sim">
+                <input class="hidden" type="button" value="Não">
+                <input class="" type="button" value="reiniciar">
+            </div>
+            <p id="res"></p>
+        </form>
+    </main>
+    <footer class="informacoes">autor - Guilherme Amorim / <a href="https://github.com/GKPTAN">perfil do github 🔗</a></footer>
 </body>
 </html>
