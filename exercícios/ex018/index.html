@@ -14,19 +14,21 @@
     <main class="conteudo">
         <form class="formulario">
             <div class="numeros">
-                <label for="numero">Adicionar número:</label>
+                <label for="numero">Digite um número:</label>
                 <input type="number" name="numeros" id="numero" required>
             </div>
             <div class="botoes">
-                <input class="hidden" type="button" value="adicionar número">
-                <p class="hidden">Você quer continuar?</p>
-                <input class="hidden" type="button" value="Sim">
-                <input class="hidden" type="button" value="Não">
-                <input class="" type="button" value="reiniciar">
+                <input class="" id="adicionar" type="button" value="adicionar número" onclick="adicionarNumero()">
+                <p class="hidden" id="pergunta">Você quer continuar?</p>
+                <input class="hidden" id="sim" type="button" value="Sim">
+                <input class="hidden" id="nao" type="button" value="Não">
+                <input class="hidden" id="reiniciar" type="button" value="reiniciar">
             </div>
             <p id="res"></p>
         </form>
     </main>
     <footer class="informacoes">autor - Guilherme Amorim / <a href="https://github.com/GKPTAN">perfil do github 🔗</a></footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
