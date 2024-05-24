@@ -102,9 +102,9 @@ function estatisticas() {
 };
 
 function reiniciar() {
-    location.reload()
-}
+    location.reload();
+};
 
 document.getElementById('reiniciar').onclick = reiniciar;
 
-iniciar()
+iniciar();
