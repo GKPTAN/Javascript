@@ -8,7 +8,7 @@ function contar() {
             numeros.push(c);
             parar();
             res.innerHTML = ` ${numeros.join(', ')}`;
-            c = c + 3;
+            c += 3;
         } while (c <= 1);
     }, 1000);
 
@@ -19,3 +19,5 @@ function contar() {
         };
     };
 };
+
+/*corrigir código*/
