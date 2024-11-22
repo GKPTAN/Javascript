@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+
+    <style>
+        input[type="button"] {
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        #res{
+            opacity: 0;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            width: 20%;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contagem Regressiva</h1>
+    <p>Contagem regressiva de 100 até 0 de 10 em 10</p>
+    <input type="button" value="ver contagem" onclick="contar()">
+
+    <p id="res"></p>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
