@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+    <style>
+        input[type="button"] {
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        table{
+            margin-top: 100px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        table th {
+            border: 1px solid black;
+            padding: 2px 15px;
+        }
+        table td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 2px;
+        }
+        input#botao {
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vetores com valores aleatórios</h1>
+    <p>aperte o botão para mostrar o valor dos vetores</p>
+    <input type="button" value="mostrar valores" onclick="vetores();mostrarBotao()">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">0</th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+                <th scope="col">6</th>
+                <th scope="col">7</th>
+                <th scope="col">8</th>
+                <th scope="col">9</th>
+                <th scope="col">10</th>
+                <th scope="col">11</th>
+                <th scope="col">12</th>
+                <th scope="col">13</th>
+                <th scope="col">14</th>
+                <th scope="col">15</th>
+                <th scope="col">16</th>
+                <th scope="col">17</th>
+                <th scope="col">18</th>
+                <th scope="col">19</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+                <td class="vetor"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <input id="botao" type="button" value="mostrar em ordem crescente" onclick="ordemCrescente()">
+
+    <script src="index.js"></script>
+</body>
+</html>
