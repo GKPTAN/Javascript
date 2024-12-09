@@ -4,6 +4,7 @@
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Launch Chrome",
             "request": "launch",
@@ -25,7 +26,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\exercícios\\ex017\\index.js"
+            "program": "${workspaceFolder}/exercícios/ex024/teste.js"
         }
     ]
 }

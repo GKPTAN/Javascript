@@ -1,5 +1,4 @@
 let numeros = document.querySelectorAll('.vetor');
-let numeroAleatorio;
 let vetor = new Array(20);
 
 function mostrarBotao() {
@@ -12,11 +11,8 @@ function sorteio(min, max) {
 };
 
 function vetores() {
-    let contador;
     for (let i = 0; i < vetor.length; i++) {
-        numeroAleatorio = sorteio(0, 99);
-        contador = numeroAleatorio;
-        vetor[i] = contador;
+        vetor[i] = sorteio(0, 99);
     };
     
     for (let i = 0; i < vetor.length; i++) {
@@ -25,6 +21,16 @@ function vetores() {
 };
 
 function ordemCrescente() {
+    for (let i = 0; i < vetor.length; i++) {
+        for (let j = i + 1; j < vetor.length; j++) {
+            if (vetor[i] > vetor[j]) {
+                let temp = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = temp;
+            };
+        };
+    };
+
     for (let i = 0; i < vetor.length; i++) {
         numeros[i].innerHTML = `${vetor[i]}`;
     };
