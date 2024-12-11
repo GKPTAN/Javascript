@@ -1,7 +1,7 @@
-function gerador() {
+function gerador(mensagem) {
     console.log("-".repeat(20));
-    console.log("Olá, mundo!");
+    console.log(mensagem);
     console.log("-".repeat(20));
 }
 
-gerador();
+gerador("Aprendendo Javascript");
