@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+    <style>
+        #res{
+            display: block;
+            opacity: 0;
+            margin-top: 30px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sequência de Fibonacci</h1>
+    <p>digite a quantidade de termos da sequência de Fibonacci que serão mostrados na tela</p>
+    <label for="termo">Escolha a quantidade de termos: </label>
+    <input type="number" name="termos" id="termo" min="1" placeholder="digite um número">
+    <button onclick="gerarFibonacci()">Gerar sequência</button>
+    <div id="res"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
