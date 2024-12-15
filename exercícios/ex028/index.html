@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Boletim escolar</title>
+</head>
+<body>
+    <h1>Média do aluno</h1>
+    <div class="boletim">
+        <div class="nome">
+            <label for="aluno">Nome do aluno: </label>
+            <input type="text" name="alunos" id="aluno" placeholder="digite o nome do aluno..." required onkeydown="nextSpace(event, 'nota1')">
+        </div>
+        <div class="nota">
+            <label for="nota1">Primeira nota: </label>
+            <input type="number" name="Primeiro_Semestre" id="nota1" placeholder="digite a nota..." min="0" max="10" onkeydown="nextSpace(event, 'nota2')" required>
+        </div>
+        <div class="nota">
+            <label for="nota2">Segunda nota: </label>
+            <input type="number" name="Segundo_Semestre" id="nota2" placeholder="digite a nota..." min="0" max="10" onkeydown="nextSpace(event, 'botao')" required>
+            <button id="botao" onclick="verMedia()">Ver média</button>
+            <button onclick="limpar()">Limpar</button>
+        </div>
+        <div id="res"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

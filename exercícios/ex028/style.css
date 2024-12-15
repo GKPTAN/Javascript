@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    background-color: yellow;
+    padding: 30px 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin-bottom: 100px;
+}
+.boletim{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: white;
+    border: 1px solid black;
+    width: 30%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+}
+input[type="text"], input[type="number"], button{
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+input[type="text"]:focus, input[type="number"]:focus{
+    background-color: yellow;
+}
+input[type="number"] {
+    width: 22%;
+}
+button{
+    margin-left: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #038CD0;
+}
+button:focus{
+    background-color: #038CD0;
+}
+#res{
+    margin: auto;
+    background-color: #038CD0;
+    border: 2px solid black;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
