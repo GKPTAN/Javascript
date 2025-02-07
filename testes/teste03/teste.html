@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #demo {
+            transition: all 0.3s ease-in-out;
+        }
+        button{
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: black;
+            color: #fff;
+            margin: 10px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover{
+            background-color: brown;
+        }
+        #container{
+            width: 200px;
+            height: 200px;
+            background-color: #113c1c;
+            position: relative;
+        }
+        #box{
+            width: 50px;
+            height: 50px;
+            background-color: #bd8107;
+            position: absolute;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="box"></div>
+    </div>
+    <div id="demo">
+        <article id="artigo">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic iste eveniet fugit, sit aliquam praesentium, voluptatum dolores dolore labore laboriosam quibusdam officia ut, quam dolorum optio perspiciatis veniam expedita reiciendis.</p>
+        </article>
+        <button onclick="adicionarTag();removerFilho()">Ver texto</button>
+        <button onclick="mudarFilho()">Mudar filho</button>
+        <button onclick="animation()">Animação</button>
+        <details id="detalhes">
+            <summary>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod in reprehenderit sit quia ducimus voluptas nostrum sequi sed dignissimos iure. Sunt, nam doloribus laudantium inventore cumque corporis et unde optio!</p>
+            </summary>
+        </details>
+        <fieldset>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In voluptatibus nesciunt ab ipsum enim. Modi molestias, magnam cumque fugit repellendus esse. Quos labore praesentium soluta eum commodi! Sequi, asperiores deleniti!</p>
+        </fieldset>
+        <h1>Teste</h1>
+        <main>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis illum sequi corporis. Facilis non magni a obcaecati et culpa, iure fugiat nesciunt velit iusto repellat! Exercitationem placeat repellendus cumque quasi?</p>
+        </main>
+        <nav>
+            <ul>
+                <li>teste</li>
+                <li>teste</li>
+                <li>teste</li>
+            </ul>
+        </nav>
+        <ol>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+        </ol>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ut, vel quas exercitationem qui sit molestias sequi quia ipsum nulla, dolorum sed, modi voluptates. Ipsa magnam facilis nemo blanditiis perferendis?</p>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veniam molestias necessitatibus autem commodi facere possimus sed, iste in ullam laborum repudiandae eum quas omnis saepe optio ipsum porro adipisci?</p>
+        </section>
+        <ul>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+        </ul>
+    </div>
+    <script src="teste.js"></script>
+</body>
+</html>
