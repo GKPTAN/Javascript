@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="calc">
+        <div>
+            <label for="v1">Valor 1</label>
+            <input type="text" name="values1" id="v1" value="0">
+        </div>
+        <div>
+            <label for="v2">Valor 2</label>
+            <input type="text" name="values2" id="v2" value="0">
+        </div>
+        <div>
+            <label for="resultado">Resultado</label>
+            <input type="text" name="resultados" id="res" value="0">
+        </div>
+        <button id="btn_somarjs">Somar JS</button>
+        <button id="btn_somarjq">Somar JQ</button>
+    </div>
+
+    <script>
+        const botaoSomarJS = document.getElementById("btn_somarjs").addEventListener("click", () => {
+            let v1 = document.getElementById("v1").value;
+            let v2 = document.getElementById("v2").value;
+            let res = document.getElementById("res");
+
+            let soma = parseInt(v1) + parseInt(v2);
+            res.value = soma;
+        });
+
+        $("#btn_somarjq").click(() => {
+            let v1 = parseInt($("#v1").val());
+            let v2 = parseInt($("#v2").val());
+            let soma = v1 + v2;
+            $("#res").val(soma);
+        });
+    </script>
+</body>
+</html>
