@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p id="texto1">CFB cursos</p>
+    <div id="texto2">Curso de Jquery</div>
+    <p id="resultado"></p>
+
+    <script>
+        // $("#texto1").click((e) => { 
+        //     $("#resultado").text("Objeto que foi clicado: " + e.target.nodeName);
+        // });
+        // $("#texto2").click((e) => { 
+        //     $("#resultado").text("Objeto que foi clicado: " + e.target.nodeName);
+        // });
+        $(document).click((e) => { 
+            $('#resultado').text("Objeto clicado: " + e.target.id);
+            if (e.target.id === "resultado") {
+                alert('resultado clicado!');
+            };
+        });
+    </script>
+</body>
+</html>
