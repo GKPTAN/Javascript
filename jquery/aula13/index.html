@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>
+            <h3>CFB Cursos</h3>
+            <p>Curso de Jquery</p>
+            <h2>Seletores siblings</h2>
+            <p>Seletores irmãos</p>
+        </span>
+    </div>
+
+    <script>
+        $("h3").next().css({'border': '1px solid #7e55b5'});
+        // $("h3").nextUntil().css({'border': '1px solid #7e55b5'});
+        // $("h2").nextAll().css({'border': '1px solid #7e55b5'});
+        // $("h2").prevUntil('').css({'border': '1px solid #7e55b5'});
+        // $("h2").prevAll().css({'border': '1px solid #7e55b5'});
+        // $("h2").prev().css({'border': '1px solid #7e55b5'});
+        // $("h3").next().css({'border': '1px solid #7e55b5'});
+        // $("h3").siblings().css({'border': '1px solid #7e55b5'});
+    </script>
+</body>
+</html>
